@@ -1,3 +1,5 @@
 /venv/
+/src/ext/mqt_predictor/models/
+
 /.idea/
 /.vscode/
