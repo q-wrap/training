@@ -10,7 +10,7 @@ def train_rl_model():
         rl_pred = mqt.predictor.rl.Predictor(
             figure_of_merit="expected_fidelity", device_name=device, logger_level=logging.DEBUG
         )  # show debug logs only for testing
-        rl_pred.train_model(timesteps=20, model_name="models/model", test=True)
+        rl_pred.train_model(timesteps=20, test=True)
         # timesteps=20 and test=True only for testing
 
 
@@ -25,7 +25,7 @@ def train_ml_model():
         name_list,
         scores_list,
     )
-    ml_pred.train_random_forest_model()
+    ml_pred.train_random_forest_classifier()
 
 
 if __name__ == '__main__':
