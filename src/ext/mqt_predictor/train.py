@@ -1,8 +1,9 @@
 import logging
 
 import mqt.predictor
+import mqt.bench
 
-devices = ["ibm_washington", "ionq_aria1"]  # limit devices only for testing
+devices = mqt.bench.devices.get_available_device_names()
 
 
 def train_rl_model():
@@ -10,14 +11,13 @@ def train_rl_model():
         rl_pred = mqt.predictor.rl.Predictor(
             figure_of_merit="expected_fidelity", device_name=device, logger_level=logging.DEBUG
         )  # show debug logs only for testing
-        rl_pred.train_model(timesteps=20, test=True)
-        # timesteps=20 and test=True only for testing
+        rl_pred.train_model(timesteps=100000)
 
 
 def train_ml_model():
     ml_pred = mqt.predictor.ml.Predictor(
         figure_of_merit="expected_fidelity", devices=devices, logger_level=logging.DEBUG
-    )  # limit devices and show debug logs only for testing
+    )  # show debug logs only for testing
     ml_pred.generate_compiled_circuits(timeout=600)  # timeout in seconds
     training_data, name_list, scores_list = ml_pred.generate_trainingdata_from_qasm_files()
     ml_pred.save_training_data(
