@@ -1,9 +1,9 @@
 import logging
 
-import mqt.predictor
 import mqt.bench
+import mqt.predictor
 
-devices = mqt.bench.devices.get_available_device_names()
+devices = ["ibm_washington", "ibm_montreal"]  # limit devices only for testing
 
 
 def train_rl_model():
@@ -11,7 +11,8 @@ def train_rl_model():
         rl_pred = mqt.predictor.rl.Predictor(
             figure_of_merit="expected_fidelity", device_name=device, logger_level=logging.DEBUG
         )  # show debug logs only for testing
-        rl_pred.train_model(timesteps=100000)
+        rl_pred.train_model(timesteps=2048)
+        # timesteps=2048 only for testing
 
 
 def train_ml_model():
