@@ -3,10 +3,12 @@ from datetime import datetime
 import mqt.bench
 import mqt.predictor
 
-devices = mqt.bench.devices.get_available_device_names()[:4]  # limit devices only for testing
+devices = mqt.bench.devices.get_available_device_names()
+devices.remove("oqc_lucy")
+devices.remove("iqm_adonis")
 
 
-def train_rl_model():
+def train_rl_model(skip=0):
     print("--- (step 1/3) training reinforcement learning model ---")
     print_timestamp()
 
@@ -14,8 +16,12 @@ def train_rl_model():
         print(f"--- (device {index + 1}/{len(devices)}) training {device} ---")
         print_timestamp()
 
+        if index < skip:
+            print("--- device already trained, skipped ---")
+            continue
+
         rl_pred = mqt.predictor.rl.Predictor(figure_of_merit="expected_fidelity", device_name=device)
-        rl_pred.train_model(timesteps=5 * 2048)  # timesteps=100_000 for full training
+        rl_pred.train_model(timesteps=50 * 2048)
 
 
 def train_ml_model():
