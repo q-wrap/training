@@ -1,4 +1,4 @@
-MQT_PREDICTOR_LOCATION = r"..\..\..\..\mqt-predictor\tests-macbook\test_5_model\src"
+MQT_PREDICTOR_LOCATION = r"..\..\mqt-predictor\tests-macbook\test_5_model\src"
 
 import sys
 
