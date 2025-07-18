@@ -1,3 +1,5 @@
+# simplified version of the training code (src.train)
+
 import mqt.bench
 import mqt.predictor
 

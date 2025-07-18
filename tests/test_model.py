@@ -1,3 +1,6 @@
+# based on Getting Started example at
+# https://github.com/munich-quantum-toolkit/predictor/blob/90d7a418b3a7c96a37e8ff7d4662a94ca266a758/README.md
+
 MQT_PREDICTOR_LOCATION = r"..\..\training_env\mqt-predictor\src"
 
 import sys

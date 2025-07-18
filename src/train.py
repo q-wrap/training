@@ -1,3 +1,6 @@
+# based on code snippets at
+# https://github.com/munich-quantum-toolkit/predictor/blob/90d7a418b3a7c96a37e8ff7d4662a94ca266a758/docs/Usage.rst
+
 from datetime import datetime
 
 import mqt.bench
