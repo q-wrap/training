@@ -2,7 +2,7 @@
 
 This repository contains the code for training the machine learning models of the
 [MQT Predictor](https://github.com/munich-quantum-toolkit/predictor) which is necessary to use the q-wrap API.
-See the q-wrap repository for more information.
+See the [q-wrap repository](https://github.com/q-wrap/q-wrap) for more information.
 
 ## Environment
 
