@@ -1,6 +1,6 @@
 # Training for q-wrap
 
-This repository contains code for training the machine learning models of the
+This repository contains the code for training the machine learning models of the
 [MQT Predictor](https://github.com/munich-quantum-toolkit/predictor) which is necessary to use the q-wrap API.
 See the q-wrap repository for more information.
 
@@ -28,7 +28,7 @@ Before you install the required packages, you should create and activate a virtu
 optional, and you are free to use another package manager like `uv` as well.
 
 ```bash
-python -m venv venv
+python -m venv venv  # Python 3.12
 
 # Windows
 venv\Scripts\activate
