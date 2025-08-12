@@ -100,3 +100,10 @@ computer is deactivated by default since it failed in our setup.
 The file `docs/train_simple.py` contains a simplified version of the training code which might help in understanding
 the process. The training code in `src/train.py` mainly adds logging and the ability to skip the training for 
 already trained quantum computers.
+
+---
+
+## Use of Generative AI
+
+The development of this project has been aided by generative artificial intelligence tools, namely GitHub Copilot and
+Microsoft Copilot, both based on the model GPT-4.
